@@ -14,7 +14,7 @@ export default class Fish {
         this.ctx.drawImage(this.image, xCenter, yCenter, this.height, this.width)
 
         // this.ctx.fillRect(xMouse, yMouse, this.image.height, this.image.width)
-
+        if (this.xMouse < 0) this.xMouse = 0;
 
     }
 

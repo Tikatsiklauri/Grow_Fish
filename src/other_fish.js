@@ -28,15 +28,21 @@ export default class OtherFish {
         let xDistance = xMouse - this.x;
         let yDistance = yMouse - this.y;
 
-       let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+        let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
 
        if (dist < (fish.width / 2) + (this.width / 2)  &&
             dist < (fish.height / 2) + (this.height / 2) &&
             this.width < fish.width && this.height < fish.height) {
                 fish.width += 0.5;
                 fish.height += 0.5;
-        }
-      
+                this.x = this.getRandomInt(-500, -50);
+                this.y = this.getRandomInt(-300, -100);
+       } else if (dist < (fish.width / 2) + (this.width / 2) &&
+            dist < (fish.height / 2) + (this.height / 2) &&
+            this.width > fish.width && this.height > fish.height) {
+                alert("Game Over");
+                clearInterval(interval);
+            }
     }
 
     populateFish() {

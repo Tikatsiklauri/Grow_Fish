@@ -1,17 +1,18 @@
+import fishImageSource from './images/newfishsmall.png';
 
 export default class OtherFish {
     constructor(ctx, fish, xMouse, yMouse) {
-        this.fishSizes = { 30: '20', 40: '25', 50: '35', 60: '45', 80: '65', 100: '85', 120: '105', 130: '115' },
-        this.keys = Object.keys(this.fishSizes),
-        this.ctx = ctx,
-        this.fishImage = new Image(),
-        this.fishImage.src = "../assets/images/newfishsmall.png",
-        this.height = this.keys[(Math.floor(Math.random() * this.keys.length))],
-        this.width = this.fishSizes[this.height],
-        this.x = this.getRandomInt(-300, -30),
-        this.y = this.getRandomInt(20, 800),
-        this.xVelocity = this.getVelocity(1, 2.2)
-        this.yVelocity = this.getVelocity(1, 1.5)
+        this.fishSizes = { 30: '20', 40: '25', 50: '35', 60: '45', 80: '65', 100: '85', 120: '105', 130: '115' };
+        this.keys = Object.keys(this.fishSizes);
+        this.ctx = ctx;
+        this.fishImage = new Image();
+        this.fishImage.src = fishImageSource;
+        this.height = this.keys[(Math.floor(Math.random() * this.keys.length))];
+        this.width = this.fishSizes[this.height];
+        this.x = this.getRandomInt(-300, -30);
+        this.y = this.getRandomInt(20, 800);
+        this.xVelocity = this.getVelocity(1, 2.2);
+        this.yVelocity = this.getVelocity(1, 1.5);
     }
 
     getRandomInt(min, max) {

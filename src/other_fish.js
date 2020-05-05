@@ -13,6 +13,7 @@ export default class OtherFish {
         this.y = this.getRandomInt(20, 800);
         this.xVelocity = this.getVelocity(1, 2.2);
         this.yVelocity = this.getVelocity(1, 1.5);
+        this.handleCollisions = this.handleCollisions.bind(this);
     }
 
     getRandomInt(min, max) {
@@ -23,6 +24,7 @@ export default class OtherFish {
 
     getVelocity(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
+       
     }
 
     handleCollisions(fish, xMouse, yMouse) {
@@ -31,25 +33,25 @@ export default class OtherFish {
 
         let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
 
-       if (dist < (fish.width / 2) + (this.width / 2)  &&
-            dist < (fish.height / 2) + (this.height / 2) &&
-            this.width < fish.width && this.height < fish.height) {
-                fish.width += 0.5;
-                fish.height += 0.5;
-                this.x = this.getRandomInt(-500, -50);
-                this.y = this.getRandomInt(-300, -100);
-       } else if (dist < (fish.width / 2) + (this.width / 2) &&
-            dist < (fish.height / 2) + (this.height / 2) &&
-            this.width > fish.width && this.height > fish.height) {
-                alert("Game Over");
-                clearInterval(interval);
-            }
+       if (dist < ((fish.width * 1.5) - 20)) {
+           console.log(dist)
+        //    debugger;
+    //        if (this.height < fish.height) {
+    //             fish.width += 0.5;
+    //             fish.height += 0.5;
+    //             this.x = this.getRandomInt(-500, -50);
+    //             this.y = this.getRandomInt(-300, -100);
+    //    } else {
+    //             alert("Game Over");
+    //             clearInterval(interval);
+    //         }
+        }
     }
 
     populateFish() {
      
         let fishies = [];
-        let maxfish = 30;
+        let maxfish = 3;
         for (let i = 0; i < maxfish; i++) {
             fishies.push(new OtherFish(this.ctx))
         }
@@ -64,13 +66,13 @@ export default class OtherFish {
 
     handleSwim() {
         if (this.x < -200) {
-            this.xVelocity = this.getVelocity(3.5, 4.2)
+            this.xVelocity = this.getVelocity(1, 1.2)
         } else if (this.x > 920) {
-            this.xVelocity = this.getVelocity(-3, -4.2)
+            this.xVelocity = this.getVelocity(-1, -1.2)
         } if (this.y < -100) {
-            this.yVelocity = this.getVelocity(0.5, 3);
+            this.yVelocity = this.getVelocity(0.5, 1);
         } else if (this.y > 600) {
-            this.yVelocity = this.getVelocity(-0.5, -3);
+            this.yVelocity = this.getVelocity(-0.5, -1);
         }
         this.x += this.xVelocity
         this.y += this.yVelocity

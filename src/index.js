@@ -24,17 +24,17 @@ let mouse = document.addEventListener('mousemove', function(e){
 
 
 
-function gameLoop() {
+const gameLoop = () => {
   
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-    fish.draw(xMouse, yMouse)
+    fish.draw(xMouse, yMouse);
     otherFish.drawFish();
     otherFishies.forEach(f => f.drawFish());
     otherFishies.forEach(f => f.handleSwim());
     otherFishies.forEach(f => f.handleCollisions(fish, xMouse, yMouse));
     
 
-    requestAnimationFrame(gameLoop)
+    requestAnimationFrame(gameLoop);
 }
 
 

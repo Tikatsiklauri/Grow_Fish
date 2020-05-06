@@ -1,4 +1,4 @@
-import fishImageSource from './images/newfishsmall.png';
+import fishImageSource from './images/';
 
 export default class OtherFish {
     constructor(ctx, fish, xMouse, yMouse) {

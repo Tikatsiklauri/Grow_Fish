@@ -1,4 +1,4 @@
-import fishImageSource from './images/';
+import fishImageSource from './images/newfish.png';
 
 export default class OtherFish {
     constructor(ctx, fish, xMouse, yMouse) {
@@ -33,7 +33,7 @@ export default class OtherFish {
 
         let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
 
-       if (dist < ((fish.width * 1.5) - 20)) {
+       if (dist < (fish.width / 2)) {
            console.log(dist)
         //    debugger;
     //        if (this.height < fish.height) {
@@ -45,7 +45,7 @@ export default class OtherFish {
     //             alert("Game Over");
     //             clearInterval(interval);
     //         }
-        }
+         }
     }
 
     populateFish() {

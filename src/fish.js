@@ -3,7 +3,7 @@ export default class Fish {
         this.ctx = ctx,
         this.image = document.getElementById("littleFish"),
         this.height = 50,
-        this.width = 35
+        this.width = 40
     }
 
     draw(xMouse, yMouse) {

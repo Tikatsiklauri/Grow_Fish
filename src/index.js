@@ -1,5 +1,4 @@
 import './styles/index.scss';
-// import './images/newfishsmallflip (1).png';
 import Fish from './fish';
 import OtherFish from './other_fish';
 

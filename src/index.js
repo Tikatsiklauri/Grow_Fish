@@ -16,9 +16,13 @@ let yMouse;
 
 let mouse = document.addEventListener('mousemove', function(e){
     let rect = canvas.getBoundingClientRect();
-    xMouse = e.clientX - rect.left;
-    yMouse = e.clientY - rect.top;
-})
+    xMouse = (e.clientX - rect.left);
+    // console.log(xMouse);
+    yMouse = (e.clientY - rect.top);
+    // console.log(yMouse);
+});
+
+
 
 
 
@@ -34,7 +38,7 @@ const gameLoop = () => {
     
 
     requestAnimationFrame(gameLoop);
-}
+};
 
 
 

@@ -36,24 +36,39 @@ export default class OtherFish {
 
        if (dist < (fish.width / 2) && 
             dist < (fish.height / 2)) {
-        //    console.log(dist)
+           console.log(dist)
         //    debugger;
            if (this.height < fish.height) {
                 fish.width += 0.5;
                 fish.height += 0.5;
                 this.x = this.getRandomInt(-600, -50);
                 this.y = this.getRandomInt(-400, -10);
-       } else {
-                alert("Game Over");
-                clearInterval(interval);
+            } else {
+                // alert("Game Over");
+                // clearInterval(interval);
             }
-         }
+        }
+
+        //    if (dist < (fish.width / 2) + (this.width / 2) &&
+        //        dist < (fish.height / 2) + (this.height / 2) &&
+        //        this.width < fish.width && this.height < fish.height) {
+        //        fish.width += 0.5;
+        //        fish.height += 0.5;
+        //        this.x = this.getRandomInt(-500, -50);
+        //        this.y = this.getRandomInt(-300, -100);
+        //    } else if (dist < (fish.width / 2) + (this.width / 2) &&
+        //        dist < (fish.height / 2) + (this.height / 2) &&
+        //        this.width > fish.width && this.height > fish.height) {
+        //        alert("Game Over");
+        //        clearInterval(interval);
+        //    }
+                
     }
 
     populateFish() {
      
         let fishies = [];
-        let maxfish = 20;
+        let maxfish = 10;
         for (let i = 0; i < maxfish; i++) {
             fishies.push(new OtherFish(this.ctx))
         }

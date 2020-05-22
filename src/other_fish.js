@@ -34,34 +34,34 @@ export default class OtherFish {
 
         let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
 
-       if (dist < (fish.width / 2) && 
-            dist < (fish.height / 2)) {
-           console.log(dist)
-        //    debugger;
-           if (this.height < fish.height) {
-                fish.width += 0.5;
-                fish.height += 0.5;
-                this.x = this.getRandomInt(-600, -50);
-                this.y = this.getRandomInt(-400, -10);
-            } else {
-                alert("Game Over");
-                clearInterval(interval);
-            }
-        }
+    //    if (dist < (fish.width / 2) && 
+    //         dist < (fish.height / 2)) {
+    //        console.log(dist)
+    //     //    debugger;
+    //        if (this.height < fish.height) {
+    //             fish.width += 0.5;
+    //             fish.height += 0.5;
+    //             this.x = this.getRandomInt(-600, -50);
+    //             this.y = this.getRandomInt(-400, -10);
+    //         } else {
+    //             alert("Game Over");
+    //             clearInterval(interval);
+    //         }
+    //     }
 
-        //    if (dist < (fish.width / 2) + (this.width / 2) &&
-        //        dist < (fish.height / 2) + (this.height / 2) &&
-        //        this.width < fish.width && this.height < fish.height) {
-        //        fish.width += 0.5;
-        //        fish.height += 0.5;
-        //        this.x = this.getRandomInt(-500, -50);
-        //        this.y = this.getRandomInt(-300, -100);
-        //    } else if (dist < (fish.width / 2) + (this.width / 2) &&
-        //        dist < (fish.height / 2) + (this.height / 2) &&
-        //        this.width > fish.width && this.height > fish.height) {
-        //        alert("Game Over");
-        //        clearInterval(interval);
-        //    }
+           if (dist < (fish.width / 2) + (this.width / 2) &&
+               dist < (fish.height / 2) + (this.height / 2) &&
+               this.width < fish.width && this.height < fish.height) {
+               fish.width += 0.5;
+               fish.height += 0.5;
+               this.x = this.getRandomInt(-500, -50);
+               this.y = this.getRandomInt(-300, -100);
+           } else if (dist < (fish.width / 2) + (this.width / 2) &&
+               dist < (fish.height / 2) + (this.height / 2) &&
+               this.width > fish.width && this.height > fish.height) {
+               alert("Game Over");
+               clearInterval(interval);
+           }
                 
     }
 

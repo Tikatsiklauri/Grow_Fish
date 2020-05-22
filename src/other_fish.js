@@ -44,8 +44,8 @@ export default class OtherFish {
                 this.x = this.getRandomInt(-600, -50);
                 this.y = this.getRandomInt(-400, -10);
             } else {
-                // alert("Game Over");
-                // clearInterval(interval);
+                alert("Game Over");
+                clearInterval(interval);
             }
         }
 
@@ -68,7 +68,7 @@ export default class OtherFish {
     populateFish() {
      
         let fishies = [];
-        let maxfish = 10;
+        let maxfish = 1;
         for (let i = 0; i < maxfish; i++) {
             fishies.push(new OtherFish(this.ctx))
         }

@@ -13,9 +13,9 @@ export default class Fish {
         let yCenter = yMouse - (this.height / 2);
         this.ctx.drawImage(this.image, xCenter, yCenter, this.height, this.width);
         
-        if (xMouse < 0) {
-            xMouse = 0;
-        }
+        // if (xMouse < 0) {
+        //     xMouse = 0;
+        // }
         
         // if (this.xCenter > this.width / 2 + this.gameWidth) this.xCenter = 920;
     }

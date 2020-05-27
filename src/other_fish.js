@@ -43,10 +43,10 @@ export default class OtherFish {
                 fish.height += 0.5;
                 this.x = this.getRandomInt(-600, -50);
                 this.y = this.getRandomInt(-400, -10);
-        } else if (this.x + this.width >= xMouse &&
-            this.x <= xMouse + fish.width &&
-            this.y + this.height >= yMouse &&
-            this.y <= yMouse + fish.height){
+        } else if (this.x + this.width >= xMouse + (fish.width / 2) &&
+            this.x <= (xMouse + (fish.width / 2))  + fish.width &&
+            this.y + this.height >= yMouse + (fish.height / 2)  &&
+            this.y <= (yMouse + (fish.height / 2))  + fish.height){
                 alert("Game Over");
                 clearInterval(interval);
             }

@@ -6,13 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
     <title>Grow Fish</title>
 </head>
 
-<body>
+<body style="background-image: url(./src/images/water-background.jpg); background-size: cover;  background-repeat: no-repeat;">
+    <header>
+        <h1 class="title" style="text-align: center;">Grow Fish</h1>
+        <div class="socialIcons" style="display: flex; justify-content: center;">
+            <div class="linkedin" style="padding: 10px;">
+                <a href="https://www.linkedin.com/in/tika-tsiklauri-9a94931a9/" target=“_blank”><i class="fab fa-linkedin" style="font-size: 2em; color: black"></i></a>
+            </div>
+            <div class="angelist" style="padding: 10px;">
+                <a href="https://angel.co/u/tika-tsiklauri" target=“_blank”><i class="fab fa-angellist" style="font-size: 2em; color: black;"></i></a>
+            </div>
+            <div class="github" style="padding: 10px;">
+                <a href="https://github.com/Tikatsiklauri" target=“_blank”><i class="fab fa-github-square" style="font-size: 2em; color: black;"></i></a>
+            </div>
+            <div class="portfolio" style="padding: 10px;">
+                <a href="https://tikatsiklauri.github.io/" target=“_blank”><i class="far fa-id-badge" style="font-size: 2em; color: black;"></i></a>
+            </div>
+        </div>
+    </header>
+    <div>
     <img id="littleFish" src="./dist/images/roundfish.png">
     <canvas id="gameScreen" height="540px" width="920px"></canvas>
     <script src="./dist/main.js"></script>
+    </div>
 </body>
 <style>
     img {

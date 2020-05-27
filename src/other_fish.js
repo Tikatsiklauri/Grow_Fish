@@ -29,19 +29,19 @@ export default class OtherFish {
     }
 
     handleCollisions(fish, xMouse, yMouse) {
-        // let xDistance = xMouse - this.x;
-        // let yDistance = yMouse - this.y;
+    //     let xDistance = xMouse - this.x;
+    //     let yDistance = yMouse - this.y;
 
-        // let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+    //     let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
 
     //    if (dist < (fish.width / 2) && 
     //         dist < (fish.height / 2)) {
     //        console.log(dist)
        debugger
-        if (this.x + this.width >= fish.x &&
-            this.x <= fish.x + fish.width &&
-            this.y + this.height >= fish.y &&
-            this.y <= fish.y + fish.height) {
+        if (this.x + this.width >= xMouse &&
+            this.x <= xMouse + fish.width &&
+            this.y + this.height >= yMouse &&
+            this.y <= yMouse + fish.height) {
                 fish.width += 0.5;
                 fish.height += 0.5;
                 this.x = this.getRandomInt(-600, -50);
@@ -50,6 +50,7 @@ export default class OtherFish {
                 alert("Game Over");
                 clearInterval(interval);
             }
+            
         }
 
             // if (dist < (fish.width / 2) + (this.width / 2) &&

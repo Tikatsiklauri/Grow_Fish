@@ -1,5 +1,4 @@
 import './styles/index.scss';
-import './images/newfishsmallflip (1).png';
 import Fish from './fish';
 import OtherFish from './other_fish';
 
@@ -17,25 +16,29 @@ let yMouse;
 
 let mouse = document.addEventListener('mousemove', function(e){
     let rect = canvas.getBoundingClientRect();
-    xMouse = e.clientX - rect.left;
-    yMouse = e.clientY - rect.top;
-})
+    xMouse = (e.clientX - rect.left);
+    // console.log(xMouse);
+    yMouse = (e.clientY - rect.top);
+    // console.log(yMouse);
+});
 
 
 
 
-function gameLoop() {
+
+
+const gameLoop = () => {
   
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-    fish.draw(xMouse, yMouse)
+    fish.draw(xMouse, yMouse);
     otherFish.drawFish();
     otherFishies.forEach(f => f.drawFish());
     otherFishies.forEach(f => f.handleSwim());
     otherFishies.forEach(f => f.handleCollisions(fish, xMouse, yMouse));
     
 
-    requestAnimationFrame(gameLoop)
-}
+    requestAnimationFrame(gameLoop);
+};
 
 
 

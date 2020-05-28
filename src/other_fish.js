@@ -1,4 +1,5 @@
-import roundFish from './images/roundfish.png'
+import roundFish from './images/roundfish.png';
+import roundFishFlip from './images/roundfish-flip.png';
 
 
 export default class OtherFish {
@@ -10,7 +11,7 @@ export default class OtherFish {
         this.fishImage.src = roundFish;
         this.height = this.keys[(Math.floor(Math.random() * this.keys.length))];
         this.width = this.fishSizes[this.height];
-        this.x = this.getRandomInt(-400, -30);
+        this.x = this.getRandomInt(-500, -100);
         this.y = this.getRandomInt(20, 800);
         this.xVelocity = this.getVelocity(1, 2.2);
         this.yVelocity = this.getVelocity(1, 1.5);
@@ -41,7 +42,7 @@ export default class OtherFish {
         if  (this.height < fish.height) {
                 fish.width += 0.5;
                 fish.height += 0.5;
-                this.x = this.getRandomInt(-600, -50);
+                this.x = this.getRandomInt(-600, -100);
                 this.y = this.getRandomInt(-400, -10);
         } else if (this.x + this.width >= xMouse &&
             this.x <= xMouse + fish.width &&
@@ -86,14 +87,16 @@ export default class OtherFish {
 
 
     handleSwim() {
-        if (this.x < -200) {
+        if (this.x <= -100) {
+            this.fishImage.src = roundFishFlip
             this.xVelocity = this.getVelocity(0.5, 3)
         } else if (this.x > 920) {
+            this.fishImage.src = roundFish;
             this.xVelocity = this.getVelocity(-0.5, -3)
         } if (this.y < -100) {
-            this.yVelocity = this.getVelocity(0.5, 3);
+            this.yVelocity = this.getVelocity(0.5, 2.5);
         } else if (this.y > 600) {
-            this.yVelocity = this.getVelocity(-0.5, -3);
+            this.yVelocity = this.getVelocity(-0.5, -2.5);
         }
         this.x += this.xVelocity
         this.y += this.yVelocity

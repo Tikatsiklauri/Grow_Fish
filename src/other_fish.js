@@ -4,7 +4,7 @@ import roundFishFlip from './images/roundfish-flip.png';
 
 export default class OtherFish {
     constructor(ctx, fish, xMouse, yMouse) {
-        this.fishSizes = { 30: '20', 40: '25', 50: '35', 60: '45', 80: '65', 100: '85', 120: '105', 130: '115' };
+        this.fishSizes = { 40: '25', 50: '35', 60: '45', 80: '65', 100: '85', 120: '105', 130: '115', 140: '125' };
         this.keys = Object.keys(this.fishSizes);
         this.ctx = ctx;
         this.fishImage = new Image();
@@ -40,8 +40,8 @@ export default class OtherFish {
            console.log(dist)
     //    debugger
         if  (this.height < fish.height) {
-                fish.width += 0.5;
-                fish.height += 0.5;
+                fish.width += 1;
+                fish.height += 1;
                 this.x = this.getRandomInt(-600, -100);
                 this.y = this.getRandomInt(-400, -10);
         } else if (this.x + this.width >= xMouse &&

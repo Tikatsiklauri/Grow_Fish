@@ -42,7 +42,7 @@ export default class OtherFish {
                     fish.height += 2;
                     this.x = this.getRandomInt(-500, -50);
                     this.y = this.getRandomInt(-300, -100);
-                  return true;
+                    return true;
                 } else {
                     alert("Game Over");
                     clearInterval(interval);
@@ -58,7 +58,7 @@ export default class OtherFish {
     populateFish() {
      
         let fishies = [];
-        let maxfish = 5;
+        let maxfish = 20;
         for (let i = 0; i < maxfish; i++) {
             fishies.push(new OtherFish(this.ctx))
         }
@@ -67,7 +67,6 @@ export default class OtherFish {
     }
 
     drawFish() {
-        // this.ctx.fillRect(this.x, this.y, this.height, this.width)
         this.ctx.drawImage(this.fishImage, this.x, this.y, this.height, this.width)
     }
 

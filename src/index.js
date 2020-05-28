@@ -6,6 +6,7 @@ let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");
 const GAME_WIDTH = 920;
 const GAME_HEIGHT = 540;
+setState("PLAY");
 
 const fish = new Fish(ctx);
 let otherFish = new OtherFish(ctx);
@@ -23,6 +24,11 @@ let mouse = document.addEventListener('mousemove', function(e){
 
 const SAVE_KEY_SCORE = "highScore" //save key of local storage of high score
 
+let gameState;
+
+export function setState(state) {
+    gameState = state;
+}
 let score = 0;
 let highScore;
 
@@ -45,7 +51,7 @@ function drawHighScore(score) {
 }
 
 const gameLoop = () => {
-  
+    if (gameState === "PLAY") {
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
     fish.draw(xMouse, yMouse);
     otherFish.drawFish();
@@ -60,10 +66,9 @@ const gameLoop = () => {
     });
     drawHighScore(highScore);
     drawScore(score);
-  
-    console.log(score);
 
     requestAnimationFrame(gameLoop);
+}
 };
 
 

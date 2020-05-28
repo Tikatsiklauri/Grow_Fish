@@ -12,7 +12,7 @@ export default class Fish {
     draw(xMouse, yMouse) {
         let xCenter = xMouse - (this.width / 2);
         let yCenter = yMouse - (this.height / 2);
-        // console.log(yMouse)
+
         if (xMouse < 0 ) {
             xCenter = xCenter - xCenter;
         }

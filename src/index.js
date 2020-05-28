@@ -10,7 +10,6 @@ const GAME_HEIGHT = 540;
 const fish = new Fish(ctx);
 let otherFish = new OtherFish(ctx);
 let otherFishies = otherFish.populateFish();
-
 let xMouse;
 let yMouse;
 
@@ -26,6 +25,7 @@ let mouse = document.addEventListener('mousemove', function(e){
 
 
 
+let score = 0;
 
 const gameLoop = () => {
   
@@ -34,8 +34,10 @@ const gameLoop = () => {
     otherFish.drawFish();
     otherFishies.forEach(f => f.drawFish());
     otherFishies.forEach(f => f.handleSwim());
-    otherFishies.forEach(f => f.handleCollisions(fish, xMouse, yMouse));
-    
+    otherFishies.forEach(f => {
+         if (f.handleCollisions(fish, xMouse, yMouse)) score += 1;
+    });
+    console.log(score);
 
     requestAnimationFrame(gameLoop);
 };

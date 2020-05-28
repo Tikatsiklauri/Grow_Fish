@@ -30,50 +30,35 @@ export default class OtherFish {
     }
 
     handleCollisions(fish, xMouse, yMouse) {
-        let xDistance = xMouse - this.x;
-        let yDistance = yMouse - this.y;
-
-        let dist = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-
-       if (dist < (fish.width / 2) && 
-            dist < (fish.height / 2)) {
-           console.log(dist)
-    //    debugger
-        if  (this.height < fish.height) {
-                fish.width += 1;
-                fish.height += 1;
-                this.x = this.getRandomInt(-600, -100);
-                this.y = this.getRandomInt(-400, -10);
-        } else if (this.x + this.width >= xMouse &&
-            this.x <= xMouse + fish.width &&
-            this.y + this.height >= yMouse &&
-            this.y <= yMouse + fish.height){
-                alert("Game Over");
-                clearInterval(interval);
+        let xCenter = xMouse - (fish.width / 2);
+        let yCenter = yMouse - (fish.height / 2);
+        const vectorX = (xCenter + fish.width / 2) - (this.x + this.width / 2);
+        const vectorY  = (yCenter + fish.height / 2) - (this.y + this.height / 2);
+        const halfWidth = ((fish.width / 2) + (this.width / 2)) / 1.3; // make up for abnormality in image sizing
+        const halfHeight = ((fish.height / 2) + (this.height / 2)) / 1.5;  //^
+            if ((Math.abs(vectorX) < halfWidth) && (Math.abs(vectorY) < halfHeight)) {
+                if (this.width < fish.width && this.height < fish.height) {
+                    fish.width += 2;
+                    fish.height += 2;
+                    this.x = this.getRandomInt(-500, -50);
+                    this.y = this.getRandomInt(-300, -100);
+                  return true;
+                } else {
+                    alert("Game Over");
+                    clearInterval(interval);
+                    return false;
+                }
+                
+                
             }
-        }
     }
 
-            // if (dist < (fish.width / 2) + (this.width / 2) &&
-            //     dist < (fish.height / 2) + (this.height / 2) &&
-            //     this.width < fish.width && this.height < fish.height) {
-            //     fish.width += 0.5;
-            //     fish.height += 0.5;
-            //     this.x = this.getRandomInt(-500, -50);
-            //     this.y = this.getRandomInt(-300, -100);
-            // } else if (dist < (fish.width / 2) + (this.width / 2) &&
-            //     dist < (fish.height / 2) + (this.height / 2) &&
-            //     this.width > fish.width && this.height > fish.height) {
-            //     alert("Game Over");
-            //     clearInterval(interval);
-            // }
-                
     
 
     populateFish() {
      
         let fishies = [];
-        let maxfish = 20;
+        let maxfish = 5;
         for (let i = 0; i < maxfish; i++) {
             fishies.push(new OtherFish(this.ctx))
         }
@@ -82,6 +67,7 @@ export default class OtherFish {
     }
 
     drawFish() {
+        // this.ctx.fillRect(this.x, this.y, this.height, this.width)
         this.ctx.drawImage(this.fishImage, this.x, this.y, this.height, this.width)
     }
 

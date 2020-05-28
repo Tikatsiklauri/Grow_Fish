@@ -37,7 +37,7 @@ export default class OtherFish {
        if (dist < (fish.width / 2) && 
             dist < (fish.height / 2)) {
            console.log(dist)
-       debugger
+    //    debugger
         if  (this.height < fish.height) {
                 fish.width += 0.5;
                 fish.height += 0.5;

@@ -72,7 +72,7 @@ export default class OtherFish {
     populateFish() {
      
         let fishies = [];
-        let maxfish = 5;
+        let maxfish = 20;
         for (let i = 0; i < maxfish; i++) {
             fishies.push(new OtherFish(this.ctx))
         }

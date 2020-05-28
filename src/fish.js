@@ -23,7 +23,7 @@ export default class Fish {
             yCenter = yCenter - yCenter;
         }
         if (yMouse >= 540) {
-            yCenter = 540 - this.height;
+            yCenter = 540 - (this.height - 10);
         }
         this.ctx.drawImage(this.image, xCenter, yCenter, this.height, this.width);
         

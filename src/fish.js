@@ -4,8 +4,8 @@ export default class Fish {
     constructor(ctx) {
         this.ctx = ctx;
         this.image = document.getElementById("littleFish");
-        this.height = 50;
-        this.width = 40;
+        this.height = 60;
+        this.width = 50;
       
     }
 

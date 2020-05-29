@@ -1,5 +1,6 @@
 import roundFish from './images/roundfish.png';
 import roundFishFlip from './images/roundfish-flip.png';
+import {setState} from './index';
 
 
 export default class OtherFish {
@@ -44,16 +45,12 @@ export default class OtherFish {
                     this.y = this.getRandomInt(-300, -100);
                     return true;
                 } else {
-                    alert("Game Over");
-                    clearInterval(interval);
                     return false;
                 }
                 
                 
             }
     }
-
-    
 
     populateFish() {
      

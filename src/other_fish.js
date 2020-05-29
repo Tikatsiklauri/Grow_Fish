@@ -45,15 +45,12 @@ export default class OtherFish {
                     this.y = this.getRandomInt(-300, -100);
                     return true;
                 } else {
-                   setState("GameOver")
                     return false;
                 }
                 
                 
             }
     }
-
-    
 
     populateFish() {
      

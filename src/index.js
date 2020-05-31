@@ -2,6 +2,7 @@ import './styles/index.scss';
 import Fish from './fish';
 import OtherFish from './other_fish';
 import waterBackground from './images/water-background.jpg';
+import fishBackground from './images/fish_background.png';
 
 let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");
@@ -68,15 +69,19 @@ document.body.addEventListener('keydown', (e) => {
 
 
 const introScreen = () => {
-    ctx.fillStyle = "#484747ab"
+   
+    ctx.fillStyle = "#dbd5d591"
     ctx.fillRect(262, canvas.height / 2 - 25, 400, 120)
-    ctx.font = "900 25px Lato"
+    ctx.font = "900 25px 'Piedra', cursive"
     ctx.textAlign = "center";
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "black";
     ctx.fillText("Eat fish that are smaller than you.", canvas.width / 2, canvas.height / 2);
     ctx.fillText("Avoid fish that are bigger than you.", canvas.width / 2, canvas.height / 2 + 40);
+    const img = new Image()
+    img.src = fishBackground;
+    img.onload = () => { ctx.drawImage(img, 560, 60)}
     
-    ctx.font = "20px Lato";
+    ctx.font = "20px 'Piedra', cursive";
     ctx.fillText("Press Space to Start", canvas.width / 2, canvas.height / 2 + 80);
 
 }

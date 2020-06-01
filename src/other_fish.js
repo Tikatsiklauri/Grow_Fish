@@ -39,8 +39,8 @@ export default class OtherFish {
         const halfHeight = ((fish.height / 2) + (this.height / 2)) / 1.5;  //^
             if ((Math.abs(vectorX) < halfWidth) && (Math.abs(vectorY) < halfHeight)) {
                 if (this.width < fish.width && this.height < fish.height) {
-                    fish.width += 2;
-                    fish.height += 2;
+                    fish.width += 1;
+                    fish.height += 1;
                     this.x = this.getRandomInt(-500, -50);
                     this.y = this.getRandomInt(-300, -100);
                     return true;

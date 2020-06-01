@@ -5,7 +5,7 @@ import {setState} from './index';
 
 export default class OtherFish {
     constructor(ctx, fish, xMouse, yMouse) {
-        this.fishSizes = { 40: '25', 50: '35', 60: '45', 80: '65', 100: '85', 120: '105', 130: '115', 140: '125' };
+        this.fishSizes = { 40: '25', 50: '35', 60: '45', 80: '65', 100: '85', 120: '105', 130: '115', 140: '125', 150: '135' };
         this.keys = Object.keys(this.fishSizes);
         this.ctx = ctx;
         this.fishImage = new Image();
@@ -44,6 +44,8 @@ export default class OtherFish {
                     this.x = this.getRandomInt(-500, -50);
                     this.y = this.getRandomInt(-300, -100);
                     return true;
+                } else if (fish.width >= 150 && fish.height >= 135) {
+                    return false;
                 } else {
                     return false;
                 }
